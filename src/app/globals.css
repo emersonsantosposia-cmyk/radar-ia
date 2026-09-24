@@ -1,13 +1,14 @@
 :root {
-  --ink: #1c2430;
-  --muted: #5c6570;
-  --paper: #f6f1e8;
-  --card: #fffcf7;
-  --line: #d9d0c3;
-  --accent: #1f3a5f;
-  --amber: #b45309;
-  --ok: #1f4d3a;
-  --erro: #8a2b2b;
+  --ink: #f4f6f1;
+  --muted: rgba(244, 246, 241, 0.72);
+  --paper: #10200d;
+  --card: rgba(255, 255, 255, 0.14);
+  --line: rgba(255, 255, 255, 0.28);
+  --accent: #1c3a1a;
+  --field: #d3d3d3;
+  --field-ink: #2a2a2a;
+  --ok: #d7f0d0;
+  --erro: #ffd0d0;
 }
 
 * {
@@ -22,7 +23,12 @@ body {
 
 body {
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 80% 55% at 50% 28%, rgba(126, 158, 72, 0.55), transparent 62%),
+    radial-gradient(ellipse 45% 40% at 18% 78%, rgba(36, 72, 28, 0.85), transparent 70%),
+    radial-gradient(ellipse 50% 42% at 84% 16%, rgba(72, 104, 42, 0.5), transparent 68%),
+    linear-gradient(180deg, #24381c 0%, #0c180a 100%);
   color: var(--ink);
   line-height: 1.45;
 }
@@ -38,6 +44,7 @@ h1 {
   font-weight: 600;
   letter-spacing: -0.02em;
   margin: 0 0 12px;
+  color: #f7f8f4;
 }
 
 .lede {
@@ -51,19 +58,20 @@ h1 {
   margin: 0 0 24px;
   padding: 12px 14px;
   border: 1px solid var(--line);
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.08);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 14px;
+  color: var(--ink);
 }
 
 .aviso.erro {
   color: var(--erro);
-  border-color: #e4c4c4;
+  border-color: rgba(255, 180, 180, 0.45);
 }
 
 .aviso.ok {
   color: var(--ok);
-  border-color: #c9ddd2;
+  border-color: rgba(190, 220, 180, 0.45);
 }
 
 .layout {
@@ -82,8 +90,13 @@ h1 {
 form,
 .list {
   background: var(--card);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
   padding: 22px;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(16px);
 }
 
 h2 {
@@ -92,7 +105,7 @@ h2 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 0 0 16px;
-  color: var(--accent);
+  color: #f3f6ef;
 }
 
 label {
@@ -109,10 +122,11 @@ textarea {
   width: 100%;
   margin-bottom: 14px;
   padding: 10px 12px;
-  border: 1px solid var(--line);
-  background: #fff;
+  border: 0;
+  border-radius: 2px;
+  background: var(--field);
   font: inherit;
-  color: var(--ink);
+  color: var(--field-ink);
 }
 
 textarea {
@@ -132,11 +146,12 @@ button {
   width: 100%;
   padding: 12px 16px;
   border: 0;
+  border-radius: 2px;
   background: var(--accent);
-  color: #f6f1e8;
+  color: #f7f8f4;
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 14px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   cursor: pointer;
 }
 
@@ -184,8 +199,8 @@ article:first-of-type {
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--amber);
-  border: 1px solid #edc9a3;
+  color: #e7f0dc;
+  border: 1px solid rgba(255, 255, 255, 0.55);
   padding: 2px 7px;
 }
 
@@ -202,7 +217,7 @@ article:first-of-type {
 
 .a {
   margin: 0;
-  color: #2d3640;
+  color: rgba(244, 246, 241, 0.88);
 }
 
 footer {
